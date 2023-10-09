@@ -6,7 +6,7 @@ Class definition of YOLO_v3 style detection model on image and video
 import colorsys
 
 import numpy as np
-from keras import backend as K
+from keras import as K
 from keras.models import load_model
 from keras.layers import Input
 from PIL import ImageFont, ImageDraw
