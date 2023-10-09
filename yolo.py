@@ -6,7 +6,7 @@ Class definition of YOLO_v3 style detection model on image and video
 import colorsys
 
 import numpy as np
-from keras import as K
+from keras import backend as K
 from keras.models import load_model
 from keras.layers import Input
 from PIL import ImageFont, ImageDraw
@@ -14,7 +14,7 @@ from yolo3.model import yolo_eval, yolo_body, tiny_yolo_body
 from yolo3.utils import letterbox_image
 import os
 from keras.utils import multi_gpu_model
-
+@st.cache(allow_output_mutation=True)
 class YOLO(object):
     def __init__(self, model_path, score=0.2, iou=0.1):
         self.model_path = model_path
